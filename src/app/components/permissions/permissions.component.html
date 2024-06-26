@@ -1,0 +1,125 @@
+<div class="card">
+  <div class="table">
+    <p-table
+      [value]="permissions"
+      selectionMode="single"
+      [tableStyle]="{ 'min-width': '50rem' }"
+      [paginator]="permissions.length>10"
+      [rows]="10"
+      [showCurrentPageReport]="false"
+    >
+      <ng-template pTemplate="header" let-columns>
+        <th rowspan="2" >Name</th>
+        <th rowspan="2" style="border-right: 1px solid rgb(237, 235, 235)">
+          Email
+        </th>
+        <th
+          colspan="5"
+          style="
+            border-left: 1px solid rgb(237, 235, 235);
+            border-right: 1px solid rgb(237, 235, 235);
+            padding-bottom: 15px;
+          "
+        >
+          Permission
+        </th>
+        <th rowspan="2" style="width: 16%; ">Status</th>
+        
+        <tr>
+          <th style="padding: 15px;">Update Estimate Time</th>
+          <th style="padding: 15px;">Update Release Tag</th>
+          <th style="padding: 15px;">Update Story Point</th>
+          <th style="padding: 15px;">Update Status for Build</th>
+          <th style="border-right: 1px solid rgb(237, 235, 235); padding: 15px;">
+            Build History
+          </th>
+          <th></th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-permission let-index="rowIndex">
+        <tr
+          [pSelectableRow]="permission"
+          *ngIf="permission.name !== 'admin'"
+          style="text-align: center"
+        >
+          <td style="text-align: center">{{ permission.name }}</td>
+          <td style="text-align: center">{{ permission.email }}</td>
+
+          <td style="text-align: center">
+            <p-checkbox
+              [binary]="true"
+              inputId="updateEstimateTime"
+              disabled="false"
+              [(ngModel)]="permission.permissionMap['updateEstimateTime']"
+              (onChange)="onclickCheckBox(index)"
+            ></p-checkbox>
+          </td>
+
+          <td style="text-align: center">
+            <p-checkbox
+              [binary]="true"
+              inputId="updateReleaseTag"
+              disabled="false"
+              [(ngModel)]="permission.permissionMap['updateReleaseTag']"
+              (onChange)="onclickCheckBox(index)"
+            ></p-checkbox>
+          </td>
+
+          <td style="text-align: center">
+            <p-checkbox
+              [binary]="true"
+              inputId="updateStoryPoint"
+              disabled="false"
+              [(ngModel)]="permission.permissionMap['updateStoryPoint']"
+              (onChange)="onclickCheckBox(index)"
+            ></p-checkbox>
+          </td>
+
+          <td style="text-align: center">
+            <p-checkbox
+              [binary]="true"
+              inputId="updateStatusBuild"
+              disabled="false"
+              [(ngModel)]="permission.permissionMap['updateStatusBuild']"
+              (onChange)="onclickCheckBox(index)"
+            ></p-checkbox>
+          </td>
+
+          <td style="text-align: center">
+            <p-checkbox
+              [binary]="true"
+              inputId="buildHistory"
+              disabled="false"
+              [(ngModel)]="permission.permissionMap['buildHistory']"
+              (onChange)="onclickCheckBox(index)"
+            ></p-checkbox>
+          </td>
+
+          <td style="text-align: center">
+            <button
+              [ngStyle]="{
+                'background-color':
+                  permission.status === 'active' ? '#cfebcd' : '#f2f2f2'
+              }"
+              (click)="togglePermissionStatus(permission)"
+            >
+              {{ permission.status === "active" ? "Active" : "Inactive" }}
+            </button>
+          </td>
+
+          <p-toast></p-toast>
+
+          <div *ngIf="isRowEdited(index)">
+            <td style="text-align: center">
+              <i
+                class="fa-regular fa-floppy-disk"
+                (click)="updateUserDetails(permission)"
+              ></i>
+            </td>
+          </div>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>

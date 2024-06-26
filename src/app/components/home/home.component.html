@@ -1,0 +1,52 @@
+<div class="header">
+  <img src="assets/images/logo.png" class="logo" alt="Logo" />
+  <div class="user-info">
+    <span class="username">{{ name }}</span>
+    <img src="assets/images/Account.jpg" alt="nt found" class="img" />
+    <button
+      pButton
+      type="button"
+      label="LOGOUT"
+      class="logout-button"
+      (click)="logout()"
+    ></button>
+  </div>
+</div>
+
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed' : ''">
+  <div class="logo-container">
+    <button class="logo" (click)="toggleCollapse()">
+      <i
+        class="fa-solid"
+        [ngClass]="{ 'fa-greater-than': !collapsed, 'fa-less-than': collapsed }"
+      ></i>
+    </button>
+  </div>
+  <ul class="sidenav-nav">
+    <ng-container *ngFor="let data of navData">
+      <ng-container
+        *ngIf="
+          !isAdmin() && data.label === 'User Permissions';
+          else otherNavItems
+        "
+      >
+      </ng-container>
+      <ng-template #otherNavItems>
+        <li class="sidenav-nav-item">
+          <a
+            class="sidenav-nav-link"
+            [routerLink]="[data.routerLink]"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            [ngClass]="{ 'sidenav-nav-link-expanded': !collapsed }"
+          >
+            <i class="sidenav-link-icon" [class]="data.icon"></i>
+            <span class="sidenav-link-text" *ngIf="collapsed">{{
+              data.label
+            }}</span>
+          </a>
+        </li>
+      </ng-template>
+    </ng-container>
+  </ul>
+</div>

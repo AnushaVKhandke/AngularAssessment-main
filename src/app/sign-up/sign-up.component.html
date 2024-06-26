@@ -1,0 +1,183 @@
+<div class="flex flex-wrap justify-content-center align-items-center h-screen">
+  <div
+    class="logo"
+    class="p-8 border-round surface-card m-2 text-center"
+    style="min-width: 320px"
+  >
+    <img
+      src="assets/images/logo.png"
+      width="230px"
+      height="170px"
+      class="py-4"
+    />
+    <h3 style="color: #3498db">UCBOS JIRA BUILD MANAGEMENT</h3>
+    <p style="font-weight: 550; font-size: 13px; color: #333333" class="py-2">
+      Tool for better management teamwork collaboration
+    </p>
+  </div>
+
+  <div class="p-4 border-round surface-card m-2" style="min-width: 320px">
+    <app-snackbar
+      [errorMessage]="errorMessage"
+      *ngIf="errorMessage"
+    ></app-snackbar>
+    <app-loader *ngIf="isLoading"></app-loader>
+    <form
+      #auth="ngForm"
+      (ngSubmit)="onFormSubmitted(auth)"
+      style="width: 450px"
+      *ngIf="!isLoading"
+    >
+      <h3 style="color: #333333" class="py-4">Create Account</h3>
+      <div class="field">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          [(ngModel)]="name"
+          name="name"
+          #nameInput="ngModel"
+          class="text-base p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-2rem"
+          ngModel
+          required
+        />
+        <small class="block p-error">
+          <div
+            *ngIf="nameInput.invalid && (nameInput.dirty || nameInput.touched)"
+          >
+            <div *ngIf="nameInput.errors.required" class="invalid-feedback">
+              Name is required
+            </div>
+          </div>
+        </small>
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="email"
+          #emailInput="ngModel"
+          [(ngModel)]="email"
+          class="text-base p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-2rem"
+          ngModel
+          required
+          email
+          name="email"
+        />
+        <Small class="block p-error">
+          <div
+            *ngIf="
+              emailInput.invalid && (emailInput.dirty || emailInput.touched)
+            "
+          >
+            <div *ngIf="emailInput.errors.required" class="invalid-feedback">
+              Email is required
+            </div>
+            <div *ngIf="emailInput.errors.email" class="invalid-feedback">
+              Invalid email format
+            </div>
+          </div>
+        </Small>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          #passwordInput="ngModel"
+          pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}$"
+          required
+          type="password"
+          class="text-base p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-2rem"
+          ngModel
+          required
+          name="password"
+        />
+        <small class="block p-error">
+          <div
+            *ngIf="
+              passwordInput.invalid &&
+              (passwordInput.dirty || passwordInput.touched)
+            "
+          >
+            <div *ngIf="passwordInput.errors.required" class="invalid-feedback">
+              Password is required
+            </div>
+            <div *ngIf="passwordInput.errors.pattern" class="invalid-feedback">
+              Password must be at least 8 characters long, alphanumeric with
+              special characters
+            </div>
+          </div>
+        </small>
+      </div>
+
+      <div class="field">
+        <label for="cpassword">Confirm Password</label>
+        <input
+          id="cpassword"
+          type="password"
+          [(ngModel)]="cpassword"
+          name="cpassword"
+          #cpasswordInput="ngModel"
+          class="text-base p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-2rem"
+          ngModel
+          required
+          [ngClass]="{
+            'is-invalid': cpasswordInput.invalid && cpasswordInput.touched
+          }"
+        />
+        <small class="block p-error">
+          <div
+            *ngIf="
+              cpasswordInput.invalid &&
+              (cpasswordInput.dirty || cpasswordInput.touched)
+            "
+          >
+            <div
+              *ngIf="cpasswordInput.errors.required"
+              class="invalid-feedback"
+            >
+              Confirm Password is required
+            </div>
+            <div
+              *ngIf="!passwordsMatch() && !cpasswordInput.errors.required"
+              class="invalid-feedback"
+            >
+              Password doesn't match
+            </div>
+          </div>
+        </small>
+      </div>
+
+      <div class="flex justify-content-center mt-4">
+        <p-button
+          label="SignUp"
+          type="submit"
+          (click)="onfail()"
+          class="flex align-items-center justify-content-center bg-primary font-bold w-full brd"
+          styleClass="h-2rem w-full"
+          name="button"
+        >
+        </p-button>
+      </div>
+      <div class="flex justify-content-center pt-3">
+        <small class="block p-error">
+          <div *ngIf="showErrorMessage" class="error-message">
+            Can't sign up. Please fill in all the fields.
+          </div>
+        </small>
+      </div>
+
+      <div class="flex justify-content-left underline pt-3">
+        <a
+          style="font-weight: 600; font-size: 15px; color: #333333"
+          routerLink="/login"
+          >Login</a
+        >
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="container">
+  <p-toast position="top-right"></p-toast>
+
+  <div *ngIf="!userData.authToken || editMode || !userData.baseUrl">
+    <div class="field">
+      <label for="authToken">Authorization Token</label>
+
+      <input
+        id="authToken"
+        [(ngModel)]="userData.authToken"
+        type="textarea"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+    </div>
+
+    <div class="field">
+      <label for="baseUrl">Base Url</label>
+      <input
+        id="baseUrl"
+        [(ngModel)]="userData.baseUrl"
+        type="text"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+      />
+    </div>
+
+    <div class="btn">
+      <button
+        type="button"
+        pButton
+        pRipple
+        (click)="updateUserData()"
+        label="save"
+        id="save"
+        class="p-button-success custom-button"
+      ></button>
+    </div>
+  </div>
+
+  <div *ngIf="userData.authToken && !editMode && userData.baseUrl">
+    <div>
+      <p>Authorization token:</p>
+
+      <p style="font-weight: 250">{{ userData.authToken | multilineformat }}</p>
+    </div>
+
+    <div>
+      <p>BaseUrl:</p>
+      <p style="font-weight: 250">{{ userData.baseUrl }}</p>
+    </div>
+
+    <div class="btn">
+      <button
+        type="button"
+        pButton
+        pRipple
+        (click)="toggleEditMode()"
+        label="Edit"
+        id="edit"
+        class="p-button-success custom-button"
+      ></button>
+    </div>
+  </div>
+  <div>
+    <button (click)="onBack()" class="back">Back</button>
+  </div>
+</div>

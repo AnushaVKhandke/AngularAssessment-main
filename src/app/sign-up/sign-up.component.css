@@ -1,0 +1,13 @@
+.text-base{
+    background-color: #f2f2f2
+  }
+  :host ::ng-deep .p-button{
+    background-color: #3498DB;
+    border-radius: 5px;
+  } 
+  .brd{
+    border-radius: 5px;
+  } 
+  .p-button{
+    border-radius: 5px;
+  }

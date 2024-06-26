@@ -1,0 +1,10 @@
+{
+  "/api/*": {
+    "target": "https://ucbos.atlassian.net",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
+
+  

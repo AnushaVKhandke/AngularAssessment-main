@@ -1,0 +1,88 @@
+:host ::ng-deep .table th {
+  font-size: 12px;
+  padding: 6px;
+  border-bottom: 1px solid rgb(237, 235, 235);
+  background-color: #fff;
+}
+.table td {
+  font-size: 14px;
+  padding: 9px;
+}
+.table {
+  background-color: #fff;
+  margin-top: 30px;
+}
+
+button {
+  border-radius: 5px;
+  padding: 2px;
+  border: none;
+  width: 50px;
+  text-align: center;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box {
+  border-radius: 3px;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box .p-checkbox-icon {
+  color: green;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+  border-color: #969696;
+  background: #fff;
+}
+:host
+  ::ng-deep
+  p-checkbox:not(.p-checkbox-disabled)
+  .p-checkbox-box.p-highlight:hover {
+  border-color: #969696;
+}
+:host ::ng-deep p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+  box-shadow: 0 0 0 0.2rem #c6c6c6;
+  border-color: #969696;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box.p-focus {
+  border-color: #969696;
+}
+
+:host ::ng-deep .p-datatable-wrapper {
+  overflow: auto;
+}
+
+.p-toast {
+  margin-top: 70px;
+}
+:host ::ng-deep .p-paginator {
+  flex-wrap: nowrap !important;
+}
+:host ::ng-deep .p-paginator {
+  width: 173px;
+  height: 29px;
+  margin: 0 5px 0 0;
+  padding: 0 13px 0 13.9px;
+  border-radius: 3px;
+  border: solid 1px #dcdcdc;
+  background-color: #fff;
+  position: absolute;
+  bottom: -45px;
+  right: -6px;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  background-color: #3498db;
+  border: 0 none;
+  color: #fff;
+  min-width: 2rem;
+  height: 1.7rem;
+  margin: 0.143rem;
+  transition: box-shadow 0.2s;
+  border-radius: 0;
+}
+:host ::ng-deep .p-paginator .p-paginator-first,
+:host ::ng-deep .p-paginator .p-paginator-prev,
+:host ::ng-deep .p-paginator .p-paginator-next,
+:host ::ng-deep .p-paginator .p-paginator-last {
+  min-width: 1.5rem;
+}
+:host ::ng-deep .p-toast {
+  margin-top: 70px;
+}

@@ -1,0 +1,370 @@
+.inputSearch {
+  position: relative;
+  margin-top: 30px;
+}
+
+.search-container {
+  position: relative;
+}
+
+.fa-magnifying-glass {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #3498db;
+}
+
+.icons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select {
+  display: flex;
+  align-items: center;
+}
+
+.bars {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.b {
+  font-size: 10px;
+  margin-right: 30px;
+}
+
+.table th {
+  font-size: 12px;
+  padding: 5px;
+}
+
+.table td {
+  font-size: 10px;
+  padding: 5px;
+}
+.select {
+  margin-top: 10px;
+  padding-right: 3px;
+}
+.table {
+  margin-top: 20px;
+}
+.select-all {
+  margin-right: 10px;
+}
+
+:host ::ng-deep .p-inputswitch-slider::before {
+  height: 1rem;
+  width: 1rem;
+  margin-top: -0.5rem;
+}
+
+:host ::ng-deep .p-inputswitch-slider {
+  height: 1.25rem;
+}
+
+:host ::ng-deep .p-inputswitch {
+  margin-top: 8px;
+  width: 2.5rem;
+  height: 1.25rem;
+  margin-left: 5px;
+}
+.p-inputtext {
+  width: 80px;
+  height: 10px;
+  font-size: 10px;
+  text-align: center;
+}
+:host ::ng-deep .p-datatable > .p-datatable-wrapper {
+  overflow: auto;
+  /* border-top-left-radius: 30px;
+  border-top-right-radius: 30px; */
+}
+:host ::ng-deep .p-button {
+  background-color: #fff;
+  color: #333333;
+  font-size: 12px;
+  border: none;
+  width: 190px;
+}
+
+:host ::ng-deep .p-button:hover {
+  background-color: #3498db;
+  color: #fff;
+  font-size: 13px;
+  border: none;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box {
+  border-radius: 0px;
+}
+.custom-button {
+  background-color: #3498db;
+  border: none;
+  position: absolute;
+  bottom: 30px;
+  right: 50px;
+  border-radius: 3px;
+  padding: 8px 17px;
+  color: #fff;
+}
+.back {
+  border: 1px solid black;
+  position: absolute;
+  bottom: 30px;
+  right: 125px;
+  border-radius: 3px;
+  padding: 7px 14px;
+}
+:host ::ng-deep .p-dialog {
+  margin-top: 70px;
+  width: 350px;
+  height: 200px;
+}
+:host ::ng-deep p-dialog .p-dialog-header .p-dialog-header-icon {
+  display: none;
+  height: 0;
+}
+:host ::ng-deep p-dialog .p-dialog-footer {
+  height: 41px;
+  margin-top: 0;
+}
+:host ::ng-deep .p-dialog .p-dialog-content {
+  padding: 1rem;
+}
+:host ::ng-deep p-dialog .p-dialog-footer .p-button {
+  padding: 10px 11px;
+  width: 70px;
+  margin-left: 2px;
+  margin-right: -6px;
+  color: #fff;
+  background-color: #3498db;
+}
+.storyPoint1 {
+  padding: 10px 11px;
+  width: 70px;
+  margin-left: 2px;
+  margin-right: -6px;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+}
+.storyPoint2 {
+  padding: 10px 11px;
+  width: 70px;
+  margin-left: 20px;
+  margin-right: 6px;
+  color: black;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.build1 {
+  padding: 10px 11px;
+  width: 70px;
+  margin-left: 2px;
+  margin-right: -6px;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+}
+.build2 {
+  padding: 10px 11px;
+  width: 70px;
+  margin-left: 18px;
+  margin-right: 6px;
+  color: black;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 5px;
+}
+
+.CancelR {
+  padding: 8px 8px;
+  width: 70px;
+  border-radius: 3px;
+}
+:host ::ng-deep p-dialog .p-button {
+  background-color: #fff;
+  color: #333333;
+  font-size: 12px;
+  border: none;
+}
+
+input {
+  margin-top: 10px;
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+}
+:host ::ng-deep .p-toast {
+  margin-top: 70px;
+}
+
+.btn {
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 10px;
+  position: absolute;
+  bottom: 20px;
+}
+.btn-group {
+  display: flex;
+}
+.record-not-found {
+  margin-top: 10px;
+}
+.select-all {
+  cursor: pointer;
+  background-color: #ecf0f1;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box {
+  border-radius: 3px;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box .p-checkbox-icon {
+  color: green;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+  border-color: #969696;
+  background: #fff;
+}
+:host
+  ::ng-deep
+  p-checkbox:not(.p-checkbox-disabled)
+  .p-checkbox-box.p-highlight:hover {
+  border-color: #969696;
+}
+:host ::ng-deep p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-focus {
+  box-shadow: 0 0 0 0.2rem #c6c6c6;
+  border-color: #969696;
+}
+:host ::ng-deep .p-checkbox .p-checkbox-box.p-focus {
+  border-color: #969696;
+}
+
+.Inbuilt {
+  font-family: Montserrat;
+  font-size: 10px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #0d0303;
+}
+.rectangle1 {
+  margin: 0px 7px 0 20px;
+  padding: 4px 4px;
+  border-radius: 12px;
+  background-color: #cfebcd;
+}
+.rectangle2 {
+  margin: 0px 7px 0px 20px;
+  padding: 4px 4px;
+  border-radius: 12px;
+  background-color: #f2f2f2;
+}
+
+:host ::ng-deep .p-paginator {
+  flex-wrap: nowrap !important;
+}
+:host ::ng-deep .p-paginator {
+  /* width: 273px; */
+  height: 29px;
+  margin: 0 5px 0 0;
+  padding: 0 13px 0 13.9px;
+  border-radius: 3px;
+  border: solid 1px #dcdcdc;
+  background-color: #fff;
+  position: absolute;
+  bottom: -45px;
+  right: 60px;
+}
+
+:host ::ng-deep .p-paginator .p-paginator-pages .p-paginator-page {
+  background-color: #3498db;
+  border: 0 none;
+  color: #fff;
+  min-width: 2rem;
+  height: 1.7rem;
+  margin: 0.143rem;
+  transition: box-shadow 0.2s;
+  border-radius: 0;
+}
+:host ::ng-deep .p-paginator .p-paginator-first,
+:host ::ng-deep .p-paginator .p-paginator-prev,
+:host ::ng-deep .p-paginator .p-paginator-next,
+:host ::ng-deep .p-paginator .p-paginator-last {
+  min-width: 1.5rem;
+}
+.go{
+  margin-top: -14px;
+    position: absolute;
+    right: -66px;
+    width: 29px;
+    height: 1.7rem;
+    text-align: center;
+    border-radius: 3px;
+    background-color:#3498db;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 300;
+  
+}
+.goInp{
+  margin-top: -14px;
+  position: absolute;
+  right: -34px;
+  width: 29px;
+  height: 1.7rem;
+  border-radius: 3px;
+  border: none;
+}
+
+.rows-per-page-options {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.rows-per-page-options ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rows-per-page-options ul li {
+  cursor: pointer;
+}
+
+.rows-per-page-options ul li:hover {
+  background-color: #3498db;
+  color: #fff;
+  padding: 0;
+}
+/* .barInp{
+  width: 20px;
+    height: 1rem;
+    margin-top: 0px;
+    border-radius: 0;
+} */
+.rows-per-page-options{
+  margin-top: 130px;
+  font-size: 10px;
+}
+

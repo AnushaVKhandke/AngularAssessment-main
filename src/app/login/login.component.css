@@ -1,0 +1,14 @@
+.text-base{
+  background-color: #f2f2f2
+}
+:host ::ng-deep .p-button{
+  background-color: #3498DB;
+ 
+}  
+:host ::ng-deep .p-checkbox-box{
+  border-radius: 0;
+}
+.brd{
+  border-radius: 5px;
+}
+

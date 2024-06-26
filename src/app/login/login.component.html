@@ -1,0 +1,85 @@
+<div class="flex flex-wrap justify-content-center align-items-center h-screen">
+  <div
+    class="logo"
+    class="p-8 border-round surface-card text-center"
+    style="min-width: 320px"
+  >
+    <img
+      src="assets/images/logo.png"
+      width="230px"
+      height="170px"
+      class="py-4"
+    />
+    <h3 style="color: #3498db">UCBOS JIRA BUILD MANAGEMENT</h3>
+    <p style="font-weight: 550; font-size: 13px; color: #333333" class="px-2">
+      Tool for better management teamwork collaboration
+    </p>
+  </div>
+
+  <div class="p-4 border-round surface-card m-2" style="min-width: 320px">
+    <form #aut="ngForm" (ngSubmit)="onFormSubmit(aut)" style="width: 450px">
+      <h3 style="color: #333333" class="py-3">Sign In</h3>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <div class="rect">
+          <input
+            id="email"
+            type="text"
+            class="text-base p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full h-2rem"
+            ngModel
+            required
+            name="email"
+          />
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input
+          id="password"
+          type="password"
+          class="text-base p-2 border-1 border-solid surface-border border-round focus:border-primary w-full h-2rem"
+          ngModel
+          required
+          name="password"
+        />
+      </div>
+
+      <div class="flex justify-content-center mt-4">
+        <p-button
+          label="Login"
+          class="flex align-items-center justify-content-center bg-primary font-bold w-full brd"
+          styleClass="h-2rem w-full"
+          type="submit"
+          name="button"
+        ></p-button>
+      </div>
+      <small class="block p-error">
+        <div *ngIf="showErrorMessage" class="error-message text-center mt-4">
+          Invalid email or password. Please try again.
+        </div>
+      </small>
+
+      <div class="rem py-4 flex justify-content-between">
+        <div>
+          <p-checkbox value="Remember Me" inputId="rm"></p-checkbox>
+          <label for="rm" class="px-2" style="color: #333333"
+            >Remember Me</label
+          >
+        </div>
+        <div>
+          <a style="color: #333333">Forget Password?</a>
+        </div>
+      </div>
+
+      <div class="flex justify-content-center underline">
+        <a
+          style="font-weight: 600; font-size: 15px; color: #333333"
+          routerLink="/signup"
+          >Create Account</a
+        >
+      </div>
+    </form>
+  </div>
+</div>

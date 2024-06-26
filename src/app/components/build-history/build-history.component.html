@@ -1,0 +1,90 @@
+<div *ngIf="tickets && tickets.length > 0">
+  <span>|
+    <p-inputSwitch [(ngModel)]="checked"></p-inputSwitch>
+  </span>
+</div>
+<div class="card" *ngIf="tickets && tickets.length > 0">
+  <div class="table">
+    <p-table
+      #dt1
+      dataKey="id"
+      [value]="tickets"
+      selectionMode="single"
+      [tableStyle]="{ 'min-width': '50rem' }"
+    >
+      <ng-template pTemplate="header">
+        <tr style="border-bottom: 1px solid #fff; background-color: #fff">
+          <th
+            pSortableColumn="generateNumberFromCurrentDate"
+            style="width: 30%"
+          >
+            BuildSequence<p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="utcDateTime" style="width: 30%">
+            DateTime<p-sortIcon field="code"></p-sortIcon>
+          </th>
+          <th pSortableColumn="Details" style="width: 50%">
+            Details<p-sortIcon field="code"></p-sortIcon>
+          </th>
+        </tr>
+        <tr *ngIf="checked">
+          <th>
+            <span class="p-input-icon-right">
+              <i class="pi pi-search" style="padding-top: 1px"></i>
+              <input
+                pInputText
+                type="text"
+                (input)="
+                  dt1.filter(
+                    $event.target.value,
+                    'generateNumberFromCurrentDate',
+                    'contains'
+                  )
+                "
+                [value]="dt1.filters['generateNumberFromCurrentDate']?.value"
+                class="p-column-filter"
+              />
+            </span>
+          </th>
+          <th>
+            <span class="p-input-icon-right">
+              <i class="pi pi-search" style="padding-top: 1px"></i>
+              <input
+                pInputText
+                type="text"
+                (input)="
+                  dt1.filter($event.target.value, 'utcDateTime', 'contains')
+                "
+                [value]="dt1.filters['utcDateTime']?.value"
+                class="p-column-filter"
+              />
+            </span>
+          </th>
+          <th></th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-tickets>
+        <tr [pSelectableRow]="tickets">
+          <td>{{ tickets.generateNumberFromCurrentDate }}</td>
+          <td>{{ tickets.utcDateTime }}</td>
+          <td>
+            <span *ngFor="let ticketId of tickets.ticketIds; let index = index">
+              <a
+                style="width: 50%"
+                [href]="baseUrl + '/browse/' + ticketId"
+                target="_blank"
+                >{{ ticketId }}
+                {{
+                  tickets.ticketIds.length > 1 &&
+                  index !== tickets.ticketIds.length - 1
+                    ? ","
+                    : ""
+                }}
+              </a>
+            </span>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
